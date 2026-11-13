@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<h1>Editar Receita</h1>
+
+{% if erro %}
+
+<div class="alert alert-danger">
+    {{ erro }}
+</div>
+
+{% endif %}
+
+<form method="POST">
+
+    <div class="mb-3">
+        <label>Descrição</label>
+
+        <input
+            type="text"
+            class="form-control"
+            name="descricao"
+            value="{{ receita['descricao'] }}"
+            required>
+    </div>
+
+    <div class="mb-3">
+        <label>Valor</label>
+
+        <input
+            type="number"
+            step="0.01"
+            min="0.01"
+            class="form-control"
+            name="valor"
+            value="{{ receita['valor'] }}"
+            required>
+    </div>
+
+    <div class="mb-3">
+        <label>Data</label>
+
+        <input
+            type="date"
+            class="form-control"
+            name="data"
+            value="{{ receita['data_transacao'] }}"
+            required>
+    </div>
+
+    <div class="mb-3">
+        <label>Categoria</label>
+
+        <select name="categoria" class="form-control">
+
+            {% for categoria in categorias %}
+
+            <option value="{{ categoria['id_categoria'] }}"
+                {% if categoria['id_categoria'] == receita['id_categoria'] %}
+                    selected
+                {% endif %}>
+                {{ categoria['nome_categoria'] }}
+            </option>
+
+            {% endfor %}
+
+        </select>
+
+    </div>
+
+    <button class="btn btn-primary">
+        Salvar Alterações
+    </button>
+
+</form>
+
+{% endblock %}

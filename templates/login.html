@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<h1 class="mb-4">Entrar no Sistema</h1>
+
+{% if erro %}
+
+<div class="alert alert-danger">
+    {{ erro }}
+</div>
+
+{% endif %}
+
+<form method="POST">
+
+    <div class="mb-3">
+        <label>E-mail</label>
+        <input type="email"
+               class="form-control"
+               name="email"
+               required>
+    </div>
+
+    <div class="mb-3">
+        <label>Senha</label>
+        <input type="password"
+               class="form-control"
+               name="senha"
+               required>
+    </div>
+
+    <button class="btn btn-success">
+        Entrar
+    </button>
+
+    <a href="/cadastro" class="btn btn-outline-secondary">
+        Não tenho conta
+    </a>
+
+</form>
+
+{% endblock %}

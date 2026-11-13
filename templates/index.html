@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<div class="text-center">
+
+    <h1 class="display-4">
+        💰 FinControl
+    </h1>
+
+    <p class="lead">
+        Sistema de Controle Financeiro Pessoal
+    </p>
+
+    <p>
+        Controle receitas, despesas e acompanhe sua situação financeira em tempo real.
+    </p>
+
+    <div class="alert alert-info d-inline-block">
+        {{ mensagem }}
+    </div>
+
+    <br>
+
+    <a href="/dashboard"
+       class="btn btn-success btn-lg">
+       Acessar Dashboard
+    </a>
+
+</div>
+
+{% endblock %}

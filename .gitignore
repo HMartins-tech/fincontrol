@@ -1,0 +1,54 @@
+# ============================================================
+# FinControl — Sistema de Controle Financeiro Pessoal
+# Arquivo de exclusao do Git
+# ============================================================
+
+# ---- Documentacao e entregaveis do trabalho ----
+# Nao fazem parte do codigo-fonte da aplicacao
+docs/
+
+# ---- Ambiente virtual Python ----
+venv/
+env/
+.venv/
+ENV/
+
+# ---- Cache do Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# ---- Distribuicao / empacotamento ----
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ---- Configuracoes locais com credenciais ----
+# O config.py contem a senha do MySQL, por isso nao vai para o repositorio.
+# Use o config.exemplo.py como modelo.
+config.py
+
+# ---- Arquivos de IDE e sistema ----
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# ---- Logs e temporarios ----
+*.log
+*.bak
+*.tmp
+
+# ---- Pastas vazias de estrutura (nao versionadas) ----
+controllers/
+models/
+
+# ---- Roteiros pessoais de apresentacao ----
+ROTEIRO_*.md
+
+# ---- Script utilitario de geracao de documento ----
+gerar_documento_bd.py

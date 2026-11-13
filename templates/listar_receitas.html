@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<h1>Receitas Cadastradas</h1>
+
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Data</th>
+            <th>Categoria</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        {% for receita in receitas %}
+
+        <tr>
+            <td>{{ receita['id_transacao'] }}</td>
+            <td>{{ receita['descricao'] }}</td>
+            <td>R$ {{ receita['valor'] }}</td>
+            <td>{{ receita['data_transacao'] }}</td>
+            <td>{{ receita['nome_categoria'] }}</td>
+
+            <td>
+
+        <a href="/editar_receita/{{ receita['id_transacao'] }}"
+            class="btn btn-warning btn-sm">
+            Editar
+        </a>        
+        
+        <a href="/excluir_receita/{{ receita['id_transacao'] }}"
+           class="btn btn-danger btn-sm"
+           onclick="return confirm('Deseja realmente excluir esta receita?');">
+           Excluir
+        </a>
+
+    </td>
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}

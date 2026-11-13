@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="/dashboard">
+            💰 FinControl
+        </a>
+
+        <div class="navbar-nav">
+
+            <a class="nav-link" href="/dashboard">
+                Dashboard
+            </a>
+
+            <a class="nav-link" href="/usuarios">
+                Usuários
+            </a>
+
+            <a class="nav-link" href="/receitas">
+                Nova Receita
+            </a>
+
+            <a class="nav-link" href="/listar_receitas">
+                Receitas
+            </a>
+
+            <a class="nav-link" href="/despesas">
+                Nova Despesa
+            </a>
+
+            <a class="nav-link" href="/listar_despesas">
+                Despesas
+            </a>
+
+        </div>
+
+        {% if session['id_usuario'] %}
+
+        <span class="navbar-text me-3">
+            👤 {{ session['nome_usuario'] }}
+        </span>
+
+        <a class="btn btn-outline-light btn-sm" href="/logout">
+            Sair
+        </a>
+
+        {% else %}
+
+        <a class="btn btn-success btn-sm" href="/login">
+            Entrar
+        </a>
+
+        {% endif %}
+
+    </div>
+
+</nav>

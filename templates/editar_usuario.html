@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<h1>Editar Usuário</h1>
+
+<form method="POST">
+
+    <div class="mb-3">
+        <label>Nome</label>
+
+        <input type="text"
+               class="form-control"
+               name="nome"
+               value="{{ usuario['nome'] }}"
+               required>
+    </div>
+
+    <div class="mb-3">
+        <label>Email</label>
+
+        <input type="email"
+               class="form-control"
+               name="email"
+               value="{{ usuario['email'] }}"
+               required>
+    </div>
+
+    <button class="btn btn-primary">
+        Salvar Alterações
+    </button>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<h1 class="mb-4">
+    Dashboard Financeiro
+</h1>
+
+<div class="row">
+
+    <div class="col-md-4">
+
+        <div class="card bg-success text-white">
+
+            <div class="card-body">
+
+                <h4>Receitas</h4>
+
+                <h2>R$ {{ total_receitas }}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card bg-danger text-white">
+
+            <div class="card-body">
+
+                <h4>Despesas</h4>
+
+                <h2>R$ {{ total_despesas }}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card bg-primary text-white">
+
+            <div class="card-body">
+
+                <h4>Saldo</h4>
+
+                <h2>R$ {{ saldo }}</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<hr class="my-5">
+
+<div class="row">
+
+    <div class="col-md-6">
+
+        <div class="card">
+
+            <div class="card-body">
+
+                <h4>Resumo Financeiro</h4>
+
+                <p>
+                    Total de receitas registradas no sistema.
+                </p>
+
+                <h5 class="text-success">
+                    R$ {{ total_receitas }}
+                </h5>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+        <div class="card">
+
+            <div class="card-body">
+
+                <h4>Situação Atual</h4>
+
+                <p>
+                    Resultado financeiro calculado automaticamente.
+                </p>
+
+                <h5 class="text-primary">
+                    R$ {{ saldo }}
+                </h5>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
